@@ -15,7 +15,9 @@ The original integration ([bajansen/home-assistant-frank_energie](https://github
 - **More reliable updates**: missing prices for tomorrow, network errors and API errors no longer break the integration. The last known prices stay available while they still cover the future.
 - **Better login handling**:
   - Tokens are renewed and saved automatically, so a restart doesn't force a new login.
+  - After a successful token renewal the update is retried immediately, instead of waiting up to an hour for fresh data.
   - Logging in again keeps your settings.
+  - Logging in again with a different account is refused with a clear message, instead of mixing up the two accounts' data. Add the other account as a separate integration instead.
   - Connection problems during login show a clear error.
 - **Your delivery address is detected automatically** when you log in.
 - **Accounts without gas and Belgian accounts** are supported: public fallback prices follow your account's country.
